@@ -6,13 +6,18 @@ import { fileURLToPath } from 'url'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 export default defineConfig({
-  plugins: [react()],
+  // Allow all hosts in production
+  define: {
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
+  },
+  plugins: [react({ fastRefresh: true })],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
   },
   server: {
+    host: '0.0.0.0',
     port: 5173,
     proxy: {
       '/api': {
@@ -22,7 +27,9 @@ export default defineConfig({
     },
   },
   preview: {
-    allowedHosts: ['activewear-pro-production.up.railway.app', 'localhost', '127.0.0.1'],
+    host: '0.0.0.0',
+    allowedHosts: 'all',
+    middlewareMode: false,
   },
   build: {
     outDir: 'dist',
@@ -33,5 +40,6 @@ export default defineConfig({
         manualChunks: undefined,
       },
     },
+    chunkSizeWarningLimit: 1000,
   },
 })
