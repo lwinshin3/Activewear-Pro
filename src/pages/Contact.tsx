@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Clock, Facebook } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -105,9 +105,9 @@ export default function Contact() {
                     href="https://www.facebook.com/activewearpro2020"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 bg-luxury-100 rounded-full flex items-center justify-center hover:bg-accent-charcoal hover:text-white transition-colors"
+                    className="w-12 h-12 bg-luxury-100 rounded-full flex items-center justify-center hover:bg-accent-charcoal hover:text-white transition-colors text-xl"
                   >
-                    <Facebook size={20} />
+                    f
                   </a>
                   <a
                     href="#"

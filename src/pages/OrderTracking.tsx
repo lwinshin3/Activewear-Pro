@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Package, Truck, CheckCircle, Clock } from 'lucide-react';
+import { Package } from 'lucide-react';
 
 export default function OrderTracking() {
   const [orderNumber, setOrderNumber] = useState('');

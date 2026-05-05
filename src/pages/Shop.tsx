@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { Filter, ChevronDown } from 'lucide-react';
+import { Filter } from 'lucide-react';
 
 interface Product {
   id: string;
