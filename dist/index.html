@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activewear Pro - Premium Myanmar Activewear</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8c 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8c 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #ff6b35;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background: #e55a2b;
+        }
+
+        .section {
+            padding: 3rem 0;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #1e3a5f;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-name {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #1e3a5f;
+        }
+
+        .product-price {
+            font-size: 1.3rem;
+            color: #ff6b35;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .stock-status {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .stock-status.in-stock {
+            color: #27ae60;
+        }
+
+        .stock-status.out-of-stock {
+            color: #e74c3c;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            padding: 10px;
+            background: #1e3a5f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .add-to-cart:hover {
+            background: #2d5a8c;
+        }
+
+        .contact-section {
+            background: #f9f9f9;
+            padding: 3rem 0;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .contact-item h3 {
+            color: #1e3a5f;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item a {
+            color: #ff6b35;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: #1e3a5f;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .about-section {
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            color: #1e3a5f;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .mission-vision {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .mission, .vision {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid #ff6b35;
+        }
+
+        .mission h4, .vision h4 {
+            color: #1e3a5f;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .mission-vision {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .cart-count {
+            background: #ff6b35;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 50%;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">ACTIVEWEAR PRO</div>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#shop">Shop</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <a href="#cart" style="display: flex; align-items: center; gap: 5px;">
+                    🛒 <span class="cart-count" id="cartCount">0</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Premium Myanmar Activewear</h1>
+            <p>Designed for comfort, style, and performance</p>
+            <a href="#shop" class="btn">Shop Now</a>
+        </div>
+    </section>
+
+    <section class="section" id="shop">
+        <div class="container">
+            <h2>Our Collection</h2>
+            <div class="products-grid" id="productsGrid"></div>
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="container section">
+            <h2>About Activewear Pro</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Who We Are</h3>
+                    <p>Activewear Pro is Myanmar's leading premium activewear brand, dedicated to providing high-quality, stylish, and comfortable athletic wear for the modern lifestyle.</p>
+                    <p>Founded with a passion for fitness and fashion, we believe that everyone deserves to feel confident and comfortable during their active pursuits.</p>
+                </div>
+                <div class="mission-vision">
+                    <div class="mission">
+                        <h4>Our Mission</h4>
+                        <p>To empower individuals through premium activewear that combines style, comfort, and performance.</p>
+                    </div>
+                    <div class="vision">
+                        <h4>Our Vision</h4>
+                        <p>To be Myanmar's most trusted and recognized premium activewear brand.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="container section">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📞 Phone</h3>
+                    <p><a href="tel:+95912345678">+959 123 456 78</a></p>
+                    <p><a href="tel:+95987654321">+959 876 543 21</a></p>
+                </div>
+                <div class="contact-item">
+                    <h3>📍 Address</h3>
+                    <p>Yangon, Myanmar</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📧 Email</h3>
+                    <p><a href="mailto:info@activewearpro.com">info@activewearpro.com</a></p>
+                </div>
+                <div class="contact-item">
+                    <h3>👍 Follow Us</h3>
+                    <p><a href="https://www.facebook.com/activewearpro2020" target="_blank">Facebook Page</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Activewear Pro. All rights reserved. | Premium Myanmar Activewear</p>
+        </div>
+    </footer>
+
+    <script>
+        const products = [
+            {id: 1, name: 'Premium Yoga Leggings', price: 89000, originalPrice: 120000, image: '🧘', category: 'leggings', stock: 15},
+            {id: 2, name: 'High-Performance Sports Top', price: 59000, image: '👕', category: 'tops', stock: 22},
+            {id: 3, name: 'Supportive Sports Bra', price: 79000, image: '🏃', category: 'sports bras', stock: 18},
+            {id: 4, name: 'Breathable Running Shorts', price: 49000, image: '🩳', category: 'shorts', stock: 25},
+            {id: 5, name: 'Compression Leggings', price: 99000, originalPrice: 140000, image: '🧘', category: 'leggings', stock: 12},
+            {id: 6, name: 'Moisture-Wicking Tank Top', price: 54000, image: '👕', category: 'tops', stock: 30}
+        ];
+
+        let cart = [];
+
+        function renderProducts() {
+            const grid = document.getElementById('productsGrid');
+            grid.innerHTML = products.map(product => `
+                <div class="product-card">
+                    <div class="product-image">${product.image}</div>
+                    <div class="product-info">
+                        <div class="product-name">${product.name}</div>
+                        <div class="product-price">
+                            ₭${product.price.toLocaleString()}
+                            ${product.originalPrice ? `<span style="text-decoration: line-through; font-size: 0.9rem; color: #999; margin-left: 10px;">₭${product.originalPrice.toLocaleString()}</span>` : ''}
+                        </div>
+                        <div class="stock-status ${product.stock > 0 ? 'in-stock' : 'out-of-stock'}">
+                            ${product.stock > 0 ? `${product.stock} in stock` : 'Out of stock'}
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart(${product.id})" ${product.stock === 0 ? 'disabled' : ''}>
+                            ${product.stock > 0 ? 'Add to Cart' : 'Out of Stock'}
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            if (product && product.stock > 0) {
+                cart.push(product);
+                updateCartCount();
+                alert(`${product.name} added to cart!`);
+            }
+        }
+
+        function updateCartCount() {
+            document.getElementById('cartCount').textContent = cart.length;
+        }
+
+        renderProducts();
+    </script>
+</body>
+</html>
